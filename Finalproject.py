@@ -1,17 +1,12 @@
 import uuid
-
 name = input("Enter your name ")
 submission = input("Enter your submission")
-
 
 class Course:
     def __init__(self, course_name, course_mark):
         self.course_id = uuid.uuid4()  # Generate a unique course ID
         self.course_name = course_name
         self.course_mark = course_mark
-
-students_l1ist=open('students_l1ist')
-
 
 class Student:
     total_students = 0  # Static variable to keep track of total student count
@@ -47,7 +42,7 @@ while True:
                               "3.Display Student\n"
                               "4.Get Student Average\n"
                               "5.Add Course to Student with Mark\n"
-                              "6.Exit"))
+                              "6.Exit\n"))
     except ValueError:
         print("Invalid input. Please enter a valid option.")
         continue
@@ -67,7 +62,7 @@ while True:
 
     elif selection == 2:
         student_number = input("Enter Student Number: ")
-        for student in student:
+        for student in students_list:
             if student.student_number == student_number:
                 students_list.remove(student)
                 print("Student Deleted Successfully")
